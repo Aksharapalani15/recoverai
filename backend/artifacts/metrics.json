@@ -1,0 +1,10 @@
+{
+  "accuracy": 0.691,
+  "precision": 0.567,
+  "recall": 0.6883,
+  "f1": 0.6218,
+  "roc_auc": 0.7575,
+  "train_size": 4000,
+  "test_size": 1000,
+  "note": "Metrics computed on a held-out 20% test split. The deployed model below is refit on the full dataset so every transaction gets a prediction for the dashboard."
+}

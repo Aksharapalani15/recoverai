@@ -1,0 +1,30 @@
+{
+  "TXN01355": {
+    "why_recoverable": "This transaction has a 91% predicted recovery probability based on the customer's history (19 prior successes vs 2 prior failures) and the failure reason 'Timeout', which historically recovers at a distinct rate from other failure types.",
+    "why_action": "'Retry payment after short delay' is the standard playbook response for a timeout failure.",
+    "customer_message": "We noticed your recent payment didn't go through. Retry payment after short delay, and let us know if you need any help.",
+    "source": "fallback_rule_based",
+    "error": "400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]"
+  },
+  "TXN04989": {
+    "why_recoverable": "This transaction has a 93% predicted recovery probability based on the customer's history (17 prior successes vs 0 prior failures) and the failure reason 'Network Error', which historically recovers at a distinct rate from other failure types.",
+    "why_action": "'Retry payment' is the standard playbook response for a network error failure.",
+    "customer_message": "We noticed your recent payment didn't go through. Retry payment, and let us know if you need any help.",
+    "source": "fallback_rule_based",
+    "error": "404 models/gemini-3.6-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods."
+  },
+  "TXN04135": {
+    "why_recoverable": "This transaction has a high recovery probability of 92.6% due to a temporary network error on the very first attempt. Furthermore, the customer demonstrates excellent payment reliability with 17 successful previous transactions and zero failures. These strong historical signals and a VERY HIGH priority classification indicate the payment is highly recoverable.",
+    "why_action": "A retry payment action is ideal here because network errors are transient and typically resolve quickly. Initiating an automatic retry ensures the transaction completes without requiring unnecessary manual effort from the customer.",
+    "customer_message": "Your UPI payment of Rs.6260.93 for your utility bill was interrupted by a temporary network issue. We are automatically retrying the payment for you. You can also re-initiate the payment directly in your app if you prefer.",
+    "source": "gemini",
+    "error": null
+  },
+  "TXN02672": {
+    "why_recoverable": "This transaction shows a high recovery potential because it is the first failed attempt after 13 consistently successful payments with zero historical failures. Furthermore, the failure was triggered by a transient network timeout during a Net Banking utility transaction, pointing to a temporary connection drop rather than a payment decline.",
+    "why_action": "Retrying after a short delay gives the bank servers sufficient time to resolve the transient timeout issue. Executing an automatic retry seamlessly completes the transaction without requiring any manual re-entry.",
+    "customer_message": "We experienced a temporary connection timeout while processing your utility payment. We are automatically retrying your Net Banking transaction shortly so you don't have to worry about repeating the payment.",
+    "source": "gemini",
+    "error": null
+  }
+}
